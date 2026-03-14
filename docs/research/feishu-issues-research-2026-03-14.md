@@ -5,7 +5,7 @@
 
 ## 背景
 
-OpenClaw 已内置飞书插件 `@openclaw/feishu`（93 个源码文件，36 个测试文件），由社区贡献者 @m1heng 维护。飞书是 OpenClaw 社区中反馈最活跃的渠道之一，GitHub 上相关 issue 超过 **120 个**（去重后），open PR 超过 **50 个**。
+OpenClaw 已内置飞书插件 `@openclaw/feishu`（93 个源码文件，36 个测试文件），由社区贡献者 @m1heng 维护。飞书是 OpenClaw 社区中反馈最活跃的渠道之一，GitHub 上相关 issue 超过 **170 个**（含 PR），去重后飞书专属 issue 约 **100+ 个**，open PR 超过 **50 个**。
 
 ## 一、核心问题汇总表
 
@@ -34,7 +34,8 @@ OpenClaw 已内置飞书插件 `@openclaw/feishu`（93 个源码文件，36 个�
 | Interactive Card 内容解析缺失 | #41607 | **未解决** | |
 | @all 不应识别为 bot mention | #37706 | **未解决** | 群聊 @所有人 误触发 |
 | Cron 投递到飞书失败 "requires a target" | #40531 | **未解决** | |
-| 原始 provider error 泄露给用户 | #45050 | **未解决** | 应显示友好错误 |
+| 原始 provider error 泄露给用户 | #45050, #41435 | **未解决** | 内部 tool-call payload 也会泄露 |
+| DM 收到消息但 agent 超时无响应 | #41046 | **未解决** | |
 | sendMessage 无 HTTP 超时导致队列死锁 | #36412 | **已解决** | |
 
 ### 3. 图片/文件/媒体问题
@@ -72,7 +73,7 @@ OpenClaw 已内置飞书插件 `@openclaw/feishu`（93 个源码文件，36 个�
 
 | 问题/反馈 | Issues 链接 | 是否解决 | 备注 |
 |---|---|---|---|
-| Session lock 文件导致请求超时 | #45726 | **未解决** | |
+| Session lock 文件导致请求超时 | #45726, #43322 | **未解决** | Card API 失败可导致 13+ 小时 session 锁死 |
 | Embedded agent LLM 请求超时 | #42079 | **未解决** | |
 | AxiosError 升级 3.8 后超时 | #42255 | **已解决** | |
 | 301 重定向循环 (HTTP/1.1) | #44572 | **已解决** | |
